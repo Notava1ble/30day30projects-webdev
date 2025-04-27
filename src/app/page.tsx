@@ -1,8 +1,6 @@
+import PostList from "@/components/PostList";
 import { Separator } from "@radix-ui/react-context-menu";
 import { promises as fs } from "fs";
-import Link from "next/link";
-// import ReactMarkdown from "react-markdown";
-// import remarkGfm from "remark-gfm";
 
 export default async function Page() {
   const posts = await fs.readdir(process.cwd() + "/src/posts");
@@ -14,13 +12,9 @@ export default async function Page() {
       </div>
       <Separator color="white" />
       <div className="h-auto w-fit mx-auto prose prose-invert mt-36">
-        {posts.map((post) => {
-          return (
-            <Link href={`/${post}`} key={post} className="no-underline">
-              <h2>{post.slice(0, -3)}</h2>
-            </Link>
-          );
-        })}
+        {posts.map((post) => (
+          <PostList post={post} key={post} />
+        ))}
       </div>
     </div>
   );
