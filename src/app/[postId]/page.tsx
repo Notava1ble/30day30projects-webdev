@@ -1,7 +1,5 @@
 import { promises as fs } from "fs";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import PostContentsHeader from "@/components/PostContentsComponent";
+import { default as PageClient } from "./page-client";
 
 const Page = async ({ params }: { params: Promise<{ postId: string }> }) => {
   const { postId } = await params;
@@ -12,13 +10,6 @@ const Page = async ({ params }: { params: Promise<{ postId: string }> }) => {
     "utf8"
   );
 
-  return (
-    <div>
-      <PostContentsHeader postName={postName} />
-      <div className="prose prose-lg prose-invert mx-auto">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{postContent}</ReactMarkdown>
-      </div>
-    </div>
-  );
+  return <PageClient postName={postName} postContent={postContent} />;
 };
 export default Page;
