@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main>
+      <main className="w-full">
         <Suspense fallback={<Loading />}>{children}</Suspense>
       </main>
     </SidebarProvider>
