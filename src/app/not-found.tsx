@@ -7,7 +7,7 @@ const NotFound = () => {
       <h1 className="text-8xl font-bold">404</h1>
       <div className="flex justify-center items-center flex-col gap-6">
         <h2 className="text-2xl">
-          The page you&apos;re requesting does not exist
+          Just kidding, the page you requested does not exist
         </h2>
         <Link href={"/"}>
           <Button className="text-xl" size="lg">
