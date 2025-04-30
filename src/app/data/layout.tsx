@@ -1,6 +1,7 @@
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { AppSidebar } from "@/components/AppSidebar";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,10 @@ export default function RootLayout({
 }>) {
   return (
     <SidebarProvider>
-      <Suspense fallback={<Loading />}>{children}</Suspense>
+      <AppSidebar />
+      <main>
+        <Suspense fallback={<Loading />}>{children}</Suspense>
+      </main>
     </SidebarProvider>
   );
 }

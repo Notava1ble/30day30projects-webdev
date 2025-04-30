@@ -13,9 +13,9 @@ export default function Home() {
           </Link>
         </li>
         <li className="text-center">
-          <p className="mb-2">Look at our contacts page</p>
-          <Link href={"/contacts"}>
-            <Button>contacts</Button>
+          <p className="mb-2">Look out some data</p>
+          <Link href={"/data"}>
+            <Button>data</Button>
           </Link>
         </li>
       </ul>
