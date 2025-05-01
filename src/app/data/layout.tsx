@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main className="w-full">
+      <main className="w-full flex items-center justify-center text-lg">
         <Suspense fallback={<Loading />}>{children}</Suspense>
       </main>
     </SidebarProvider>
